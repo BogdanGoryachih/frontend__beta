@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { ChangeEvent, FC, useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import { Form, useLoaderData } from 'react-router-dom'
 import { IResponseTransactionLoader } from '../types/types'
@@ -7,6 +7,15 @@ import CategoryModal from './CategoryModal'
 const TransactionForm: FC = () => {
 	const { categories } = useLoaderData() as IResponseTransactionLoader
 	const [visibleModal, setVisibleModal] = useState(false)
+	const [selectedOption, setSelectedOption] = useState('');
+
+	const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setSelectedOption(event.target.value);
+	  };
+
+  const handleSubmit = () => {
+    // Ваша логика отправки данных или что-то еще
+  };
 
 	return (
 		<div className="rounded-md bg-slate-800 p-4">
@@ -60,29 +69,38 @@ const TransactionForm: FC = () => {
 				</button>
 
 				{/* Radio Buttons */}
-				<div className="flex items-center gap-4">
-					<label className="flex cursor-pointer items-center gap-2">
-						<input
-							type="radio"
-							name="type"
-							value={'income'}
-							className="form-radio text-blue-600"
-						/>
-						<span>Done</span>
-					</label>
-					<label className="flex cursor-pointer items-center gap-2">
-						<input
-							type="radio"
-							name="type"
-							value={'expense'}
-							className="form-radio text-blue-600"
-						/>
-						<span>Not ready</span>
-					</label>
-				</div>
+			
+      <div className="flex items-center gap-4">
+        <label className="flex cursor-pointer items-center gap-2">
+          <input
+            type="radio"
+            name="type"
+            value={'income'}
+            className="form-radio text-blue-600"
+            onChange={handleOptionChange}
+          />
+          <span>Done</span>
+        </label>
+        <label className="flex cursor-pointer items-center gap-2">
+          <input
+            type="radio"
+            name="type"
+            value={'expense'}
+            className="form-radio text-blue-600"
+            onChange={handleOptionChange}
+          />
+          <span>Not ready</span>
+        </label>
+      </div>
 
-				{/* Submit button */}
-				<button className="btn btn-green mt-2 max-w-fit">Submit</button>
+      {/* Submit button */}
+      <button
+        className="btn btn-green mt-2 max-w-fit"
+        onClick={handleSubmit}
+        disabled={!selectedOption} // Кнопка станет неактивной, если selectedOption равен пустой строке (то есть ничего не выбрано)
+      >
+        Submit
+      </button>
 			</Form>
 
 			{/* Add Category Modal */}
@@ -90,6 +108,7 @@ const TransactionForm: FC = () => {
 				<CategoryModal type="post" setVisibleModal={setVisibleModal} />
 			)}
 		</div>
+		
 	)
 }
 
