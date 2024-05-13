@@ -12,6 +12,7 @@ import Categories, {
 } from '../pages/Categories'
 import Auth from '../pages/Auth'
 import { ProtectedRoute } from '../components/ProtectedRoute'
+import Nauk, { naukAction, naukLoader } from '../pages/Nauk'
 
 export const router = createBrowserRouter([
 	{
@@ -40,6 +41,16 @@ export const router = createBrowserRouter([
 				element: (
 					<ProtectedRoute>
 						<Categories />
+					</ProtectedRoute>
+				),
+			},
+			{
+				path: 'nauk',
+				action: naukAction,
+				loader: naukLoader,
+				element: (
+					<ProtectedRoute>
+						<Nauk />
 					</ProtectedRoute>
 				),
 			},

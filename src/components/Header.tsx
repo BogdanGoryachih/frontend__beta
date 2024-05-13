@@ -59,6 +59,16 @@ const Header: FC = () => {
 								Create Rank
 							</NavLink>
 						</li>
+						<li>
+							<NavLink
+								to={'/nauk'}
+								className={({ isActive }) =>
+									isActive ? 'text-white' : 'text-white/50'
+								}
+							>
+								nauk
+							</NavLink>
+						</li>
 					</ul>
 				</nav>
 			)}
