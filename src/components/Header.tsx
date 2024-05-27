@@ -36,7 +36,7 @@ const Header: FC = () => {
 									isActive ? 'text-white' : 'text-white/50'
 								}
 							>
-								Home
+								Головна
 							</NavLink>
 						</li>
 						<li>
@@ -46,7 +46,7 @@ const Header: FC = () => {
 									isActive ? 'text-white' : 'text-white/50'
 								}
 							>
-								Create 
+								Дані  
 							</NavLink>
 						</li>
 						<li>
@@ -56,7 +56,7 @@ const Header: FC = () => {
 									isActive ? 'text-white' : 'text-white/50'
 								}
 							>
-								Create Rank
+								Створення категорії
 							</NavLink>
 						</li>
 						<li>
@@ -66,7 +66,7 @@ const Header: FC = () => {
 									isActive ? 'text-white' : 'text-white/50'
 								}
 							>
-								nauk
+								Наукова діяльність
 							</NavLink>
 						</li>
 					</ul>
@@ -76,7 +76,7 @@ const Header: FC = () => {
 			{/* Actions */}
 			{isAuth ? (
 				<button className="btn btn-red" onClick={logoutHandler}>
-					<span>Log Out</span>
+					<span>Вийти</span>
 					<FaSignOutAlt />
 				</button>
 			) : (
@@ -84,7 +84,7 @@ const Header: FC = () => {
 					className="ml-auto py-2 text-white/50 hover:text-white"
 					to={'auth'}
 				>
-					Log In / Sing In
+					Війти / Зареєстурватися
 				</Link>
 			)}
 		</header>

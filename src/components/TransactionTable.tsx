@@ -55,11 +55,11 @@ const TransactionTable: FC<ITransactionTable> = ({ limit = 3 }) => {
 					<thead>
 						<tr>
 							<td className="font-bold"> № </td>
-							<td className="font-bold">Nema Surname</td>
-							<td className="font-bold">Group</td>
-							<td className="font-bold">Rank</td>
-							<td className="font-bold">Date</td>
-							<td className="text-right">Action</td>
+							<td className="font-bold">Ім'я прізвище</td>
+							<td className="font-bold">Група</td>
+							<td className="font-bold">Категорія</td>
+							<td className="font-bold">Дата</td>
+							<td className="text-right">Видалення</td>
 						</tr>
 					</thead>
 					<tbody>

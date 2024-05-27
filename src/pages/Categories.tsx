@@ -50,7 +50,7 @@ const Categories: FC = () => {
 	return (
 		<>
 			<div className="mt-10 rounded-md bg-slate-800 p-4">
-				<h1> Your category list:</h1>
+				<h1> Лист з Категорями</h1>
 				{/* Category List */}
 				<div className="mt-2 flex flex-wrap items-center gap-2">
 					{categories.map((category, idx) => (
@@ -87,7 +87,7 @@ const Categories: FC = () => {
 					className="mt-5 flex max-w-fit items-center gap-2 text-white/50 hover:text-white"
 				>
 					<FaPlus />
-					<span>Create a new category</span>
+					<span>Створити нову Категорію</span>
 				</button>
 			</div>
 

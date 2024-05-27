@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import TransactionTable from '../components/TransactionTable'
 import NaukForm from '../components/NaukForm'
 import NaukTable from '../components/NaukTable'
+import { runScript } from './Transactions'
 
 export const	naukLoader = async () => {
 	const categories = await instance.get<ICategory[]>('/categories')
@@ -106,6 +107,7 @@ const Transactions: FC = () => {
 
 			{/* Transactions Table */}
 			<h1 className="my-5">
+			<button onClick={() => runScript('transaction')}>Завантажити таблцию</button>
 				<NaukTable limit={5} />
 			</h1>
 		</>

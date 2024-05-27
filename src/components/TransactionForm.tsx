@@ -21,21 +21,21 @@ const TransactionForm: FC = () => {
 		<div className="rounded-md bg-slate-800 p-4">
 			<Form className="grid gap-2" method="post" action="/transactions">
 				<label className="grid" htmlFor="title">
-					<span>Name Surname</span>
+					<span>Ім'я прізвище</span>
 					<input
 						className="input border-slate-700"
 						type="text"
-						placeholder="Name Surname"
+						placeholder="Ім'я прізвище"
 						name="title"
 						required
 					/>
 				</label>
 				<label className="grid" htmlFor="amount">
-					<span>Group</span>
+					<span>Група</span>
 					<input
 						className="input border-slate-700"
 						type="number"
-						placeholder="Group"
+						placeholder="Група"
 						name="amount"
 						required
 					/>
@@ -44,8 +44,8 @@ const TransactionForm: FC = () => {
 				{/* Select */}
 				{categories.length ? (
 					<label htmlFor="category" className="grid">
-						<span>Runk</span>
-						<select className="input border-slate-700" name="category" required>
+						<span>Категорія</span>
+						<select className="input border-slate-700" name="Категорія" required>
 							{categories.map((ctg, idx) => (
 								<option key={idx} value={ctg.id}>
 									{ctg.title}
@@ -65,7 +65,7 @@ const TransactionForm: FC = () => {
 					className="flex max-w-fit items-center gap-2 text-white/50 hover:text-white"
 				>
 					<FaPlus />
-					<span>Manage Categories</span>
+					<span>Добавити Категорія</span>
 				</button>
 
 				{/* Radio Buttons */}
@@ -79,7 +79,7 @@ const TransactionForm: FC = () => {
             className="form-radio text-blue-600"
             onChange={handleOptionChange}
           />
-          <span>Done</span>
+          <span>Виданна</span>
         </label>
         <label className="flex cursor-pointer items-center gap-2">
           <input
@@ -89,7 +89,7 @@ const TransactionForm: FC = () => {
             className="form-radio text-blue-600"
             onChange={handleOptionChange}
           />
-          <span>Not ready</span>
+          <span>Не Виданна</span>
         </label>
       </div>
 
@@ -99,7 +99,7 @@ const TransactionForm: FC = () => {
         onClick={handleSubmit}
         disabled={!selectedOption} // Кнопка станет неактивной, если selectedOption равен пустой строке (то есть ничего не выбрано)
       >
-        Submit
+        Створити
       </button>
 			</Form>
 

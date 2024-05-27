@@ -1,0 +1,8 @@
+.text-home{
+    margin-bottom: 16px;
+    background-color: white;  /* Делает форму белой */
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 150;
+}

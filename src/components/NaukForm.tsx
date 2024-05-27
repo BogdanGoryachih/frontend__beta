@@ -3,6 +3,7 @@ import { FaPlus } from 'react-icons/fa'
 import { Form, useLoaderData } from 'react-router-dom'
 import { IResponseTransactionLoader } from '../types/types'
 import CategoryModal from './CategoryModal'
+import NauPy from './NauPy'
 
 const NaukForm: FC = () => {
 	const { categories } = useLoaderData() as IResponseTransactionLoader
@@ -12,7 +13,9 @@ const NaukForm: FC = () => {
 	const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
 		setSelectedOption(event.target.value);
 	  };
+	  //sex
 
+	  //end
   const handleSubmit = () => {
     // Ваша логика отправки данных или что-то еще
   };
@@ -91,6 +94,7 @@ const NaukForm: FC = () => {
           />
           <span>Not ready</span>
         </label>
+		
       </div>
 
       {/* Submit button */}
@@ -101,6 +105,7 @@ const NaukForm: FC = () => {
       >
         Submit
       </button>
+	  
 			</Form>
 
 			{/* Add Category Modal */}
@@ -108,6 +113,8 @@ const NaukForm: FC = () => {
 				<CategoryModal type="post" setVisibleModal={setVisibleModal} />
 			)}
 		</div>
+		
+		
 		
 	)
 }

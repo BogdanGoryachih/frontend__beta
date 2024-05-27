@@ -22,6 +22,15 @@ export const transactionLoader = async () => {
 	}
 	return data
 }
+export const runScript = async (endpoint: string) => {
+    try {
+      const response = await fetch(`http://localhost:5000/run_script/${endpoint}`);
+      const data = await response.json();
+      alert(data.message);
+    } catch (error) {
+      console.error('Ошибка при выполнении скрипта:', error);
+    }
+  };
 export const transactionAction = async ({ request }: any) => {
 	switch (request.method) {
 		case 'POST': {
@@ -104,9 +113,12 @@ const Transactions: FC = () => {
 			</div>
 
 			{/* Transactions Table */}
+			
 			<h1 className="my-5">
+			<button onClick={() => runScript('transaction')}>Завантажити таблцию</button>
 				<TransactionTable limit={5} />
 			</h1>
+			
 		</>
 	)
 }
